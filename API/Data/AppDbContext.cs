@@ -1,11 +1,13 @@
-﻿namespace API.Data
-{
-    using API.Entities;
-    using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-    using Microsoft.EntityFrameworkCore;
+﻿
+using API.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
-    public class AppDbContext(DbContextOptions<AppDbContext> options) : IdentityDbContext<AppUser>
-    {
+namespace API.Data
+{
+
+// Truyền biến options vào lớp cha IdentityDbContext
+public class AppDbContext(DbContextOptions<AppDbContext> options) : IdentityDbContext<AppUser>(options)    {
 
         // ===== DbSet =====
         public DbSet<Category> Categories { get; set; } = null!;
