@@ -1,6 +1,4 @@
-using System;
-using System.Linq.Expressions;
-using Adidas.Application.Interfaces;
+
 using Adidas.Application.Interfaces.IRepositories;
 using API.Data;
 using API.Entities;
@@ -18,16 +16,16 @@ public class CartRepository(AppDbContext _context) : GenericRepository<Cart>(_co
             var newCart = new Cart
             {
                 UserId = userId,
-                Items = new List<CartItem>
-                {
-                    new CartItem { ProductId = productId, Quantity = quantity }
-                }
+                Items = new List<CartItem> { new() { ProductId = productId, Quantity = quantity } }
+                
             };
             await _context.Carts.AddAsync(newCart);
 
             return true;
         }
-        if (cart.Items != null)
+
+        var existingItem = cart.Items?.FirstOrDefault(i => i.ProductId == productId);
+        if (existingItem != null)
         {
              await _context.CartItems
                  .Where(i => i.CartId == cart.Id && i.ProductId == productId)
@@ -71,6 +69,23 @@ public class CartRepository(AppDbContext _context) : GenericRepository<Cart>(_co
             .FirstOrDefaultAsync(C => C.UserId == userId);
     }
 
+    public async Task<int> GetItemQuantityInCartAsync(string userId, int productId)
+    {
+        var cartId = await _context.Carts
+                    .Where(c => c.UserId == userId)
+                    .Select(c => c.Id)
+                    .FirstOrDefaultAsync();
+
+        if (cartId == 0) return 0;
+
+        var quantity = await _context.CartItems
+                    .Where(i => i.CartId == cartId && i.ProductId == productId)
+                    .Select(i => i.Quantity)
+                    .FirstOrDefaultAsync();
+
+        return quantity;
+    }
+
     public async Task<bool> RemoveItemFromCartAsync(string userId, int productId)
     {
         var cartId = await _context.Carts
@@ -89,12 +104,13 @@ public class CartRepository(AppDbContext _context) : GenericRepository<Cart>(_co
 
     public async Task<bool> UpdateItemQuantityAsync(string userId, int productId, int quantity)
     {
-        var cartId = await _context.Carts.Where(c => c.UserId == userId)
+        var cartId = await _context.Carts
+                    .Where(c => c.UserId == userId)
                     .Select(c => c.Id)
                     .FirstOrDefaultAsync();
 
-        if (cartId == 0) return false;
-
+        if( cartId == 0 ) return false;
+       
         var rowsAffected = await _context.CartItems
                         .Where(item => item.ProductId == productId && item.CartId == cartId)
                         .ExecuteUpdateAsync(setter => setter

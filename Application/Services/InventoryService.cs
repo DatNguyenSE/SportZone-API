@@ -35,8 +35,10 @@ public class InventoryService(IUnitOfWork uow, IMapper mapper) : IInventoryServi
 
     public async Task<int> GetQuantityAsync(int productId)
     {
-        var inventory = await uow.InventoryRepository.GetByIdAsync(productId) 
-            ?? throw new NotFoundException("Product not found.");
-        return inventory.Quantity;
+        var productExists = await uow.ProductRepository.AnyAsync(p => p.Id == productId);
+        if (!productExists) throw new NotFoundException("Product not found.");
+        
+        var quantity = await uow.InventoryRepository.GetQuantityAsync(productId);
+        return quantity;
     }
 }

@@ -1,11 +1,13 @@
-﻿namespace API.Entities
+﻿using Adidas.Domain.Enums;
+
+namespace API.Entities
 {
     public class Order
     {
         public int Id { get; set; }
         public decimal TotalAmount { get; set; }
 
-        public string Status { get; set; } = "pending";
+        public OrderStatus Status { get; set; } = OrderStatus.Pending;
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
         public string UserId { get; set; } = null!;

@@ -1,11 +1,13 @@
-﻿namespace API.Entities
+﻿using Adidas.Domain.Enums;
+
+namespace API.Entities
 {
     public class Payment
     {
         public int Id { get; set; }
 
-        public string PaymentMethod { get; set; } = null!;
-        public string PaymentStatus { get; set; } = null!;
+        public PaymentMethod PaymentMethod { get; set; }
+        public PaymentStatus PaymentStatus { get; set; }
         public DateTime? PaidAt { get; set; }
 
         public int OrderId { get; set; }

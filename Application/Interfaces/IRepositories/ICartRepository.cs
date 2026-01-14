@@ -10,4 +10,5 @@ public interface ICartRepository : IGenericRepository<Cart>
     Task<bool> RemoveItemFromCartAsync(string userId, int productId);
     Task<bool> UpdateItemQuantityAsync(string userId, int productId, int quantity);
     Task<bool> ClearCartAsync(string userId);
+    Task<int> GetItemQuantityInCartAsync(string userId, int productId);
 }

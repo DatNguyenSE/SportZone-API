@@ -1,0 +1,40 @@
+using System;
+using Adidas.Application.Interfaces.IRepositories;
+using Adidas.Domain.Enums;
+using API.Data;
+using API.Entities;
+using Microsoft.EntityFrameworkCore;
+
+namespace Adidas.Infrastructure.Repositories;
+
+public class OrderRepository(AppDbContext _context) : GenericRepository<Order>(_context), IOrderRepository
+{
+    public async Task<Order?> GetOrderWithDetailsAsync(int id, string userId)
+    {
+        return await _context.Orders
+            .Include(o => o.Payment)       
+            .Include(o => o.Items)          
+                .ThenInclude(i => i.Product) 
+            .FirstOrDefaultAsync(o => o.Id == id && o.UserId == userId);
+    }
+
+    public async Task<IEnumerable<Order?>> GetOrderWithPaymentAsync(string userId, PaymentStatus paymentStatus)
+    {
+        return await _context.Orders 
+        .AsNoTracking()
+        .Include(o => o.Payment)
+        .Where(o => o.UserId == userId && o.Payment != null &&o.Payment.PaymentStatus == paymentStatus)
+        .ToListAsync();
+    }
+
+    public async Task<IEnumerable<Order>> GetOrdersByUserIdAsync(string userId)
+    {
+        return await _context.Orders
+            .Where(o => o.UserId == userId)
+            .Include(o => o.Items)          
+            .ThenInclude(i => i.Product)    
+            .OrderByDescending(o => o.CreatedAt) 
+            .ToListAsync();
+    }
+
+}
