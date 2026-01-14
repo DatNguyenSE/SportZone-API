@@ -38,6 +38,8 @@ namespace Adidas.Application.Mappings
 
             //map order
             CreateMap<Order, OrderDto>().ReverseMap();
+            CreateMap<Order, OrderDetailsDto>()
+                .ForMember(dest => dest.Payment, opt => opt.MapFrom(src => src.Payment));
             CreateMap<OrderItem, OrderItemDto>().ReverseMap();
             CreateMap<Payment, PaymentDto>().ReverseMap();
             CreateMap<Product, ProductItemDto>().ReverseMap();

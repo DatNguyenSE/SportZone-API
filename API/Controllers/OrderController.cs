@@ -1,5 +1,6 @@
 using Adidas.API.Extensions;
 using Adidas.Application.Interfaces.IService;
+using Adidas.Domain.Enums;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,7 +11,7 @@ namespace Adidas.API.Controllers
     public class OrderController(IOrderService orderService) : ControllerBase
     {
         [HttpPost("add")]
-        public async Task<IActionResult> CreateOrder(string paymentMethod)
+        public async Task<IActionResult> CreateOrder(PaymentMethod paymentMethod)
         {
             var userId = User.GetUserId();
             var orderId = await orderService.CreateOrderByCartItemsAsync(userId, paymentMethod);
@@ -39,6 +40,14 @@ namespace Adidas.API.Controllers
             var userId = User.GetUserId();
             await orderService.CancelOrderAsync(orderId, userId);
             return Ok(new { Message = "Order cancelled successfully." });
+        }
+
+        [HttpGet("payment-status")]
+        public async Task<ActionResult> GetOrderWithPaymentStatus(PaymentStatus paymentStatus)
+        {
+            var userId = User.GetUserId();
+            var orders = await orderService.GetOrderWithPaymentAsync(userId, paymentStatus);
+            return Ok(orders);
         }
     }
 }

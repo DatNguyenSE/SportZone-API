@@ -14,10 +14,18 @@ public class CartItemDto
     public int Quantity { get; set; }
     public ProductDto? Product { get; set; }
 }
+
 public class AddCartItemDto
 {
     public int ProductId { get; set; }
     public int Quantity { get; set; }
 }
+
+public class UpdateCartItemDto : AddCartItemDto
+{
+    
+}
+
+
 
 

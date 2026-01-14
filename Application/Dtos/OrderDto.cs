@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace Adidas.Application.Dtos;
 
 public class OrderDto
@@ -8,6 +10,11 @@ public class OrderDto
     public decimal TotalAmount { get; set; }
     public string Status { get; set; } = string.Empty;
     public List<OrderItemDto> Items { get; set; } = new();
+}
+
+public class OrderDetailsDto : OrderDto
+{
+    [JsonPropertyOrder(100)]
     public PaymentDto? Payment { get; set; }
 }
 public class OrderItemDto

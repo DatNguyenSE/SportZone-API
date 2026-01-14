@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Adidas.Infrastructure.Repositories;
 
-public class InventoryRepository( AppDbContext _context) : GenericRepository<Inventory>(_context), IInventoryRepository
+public class InventoryRepository(AppDbContext _context) : GenericRepository<Inventory>(_context), IInventoryRepository
 {
     public async Task<IEnumerable<Inventory>> GetListByProductIdsAsync(IEnumerable<int> productIds)
     {
@@ -26,4 +26,3 @@ public class InventoryRepository( AppDbContext _context) : GenericRepository<Inv
         return quantity;
     }
 }
-    

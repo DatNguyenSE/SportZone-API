@@ -42,8 +42,8 @@ namespace Adidas.API.Controllers
             return NoContent();
         }
         
-        [HttpPost("update")]
-        public async Task<IActionResult> UpdateItemQuantity(CartItemDto dto)
+        [HttpPost("update-items")]
+        public async Task<IActionResult> UpdateItemQuantity(UpdateCartItemDto dto)
         {
             var userId = User.GetUserId();
             await cartService.UpdateItemQuantityAsync(userId, dto.ProductId, dto.Quantity);
