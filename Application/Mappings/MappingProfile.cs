@@ -1,6 +1,6 @@
 using AutoMapper;
-using Adidas.Application.Dtos; 
-using API.Entities; 
+using Adidas.Application.Dtos;
+using API.Entities;
 
 namespace Adidas.Application.Mappings
 {
@@ -18,14 +18,29 @@ namespace Adidas.Application.Mappings
             //inventory
             CreateMap<InventoryDto, Inventory>().ReverseMap();
             CreateMap<Product, ProductDto>()
-               
+
                 .ForMember(dest => dest.Quantity, opt => opt.MapFrom(src => src.Inventory != null ? src.Inventory.Quantity : 0))
                 .ReverseMap();
 
-            // Cart
+            // Map CartItem -> CartItemDto (Destination , Options)
+            CreateMap<CartItem, CartItemDto>()
+                .ForMember(dest => dest.Product, opt => opt.MapFrom(src => src.Product))
+                .AfterMap((src, dest) => 
+                    {
+                        if (dest.Product != null) dest.Product.Quantity = src.Quantity;
+                    });
+            //  Map Cart -> CartDto
             CreateMap<Cart, CartDto>()
-                .ForMember(dest => dest.Items, opt => opt.MapFrom(src => src.Items))
-                .ReverseMap();
+                .ForMember(dest => dest.Items, opt => opt.MapFrom(src => src.Items)).ReverseMap();
+            
+            // Map AddCartItemDto -> CartItem ( for adding items to cart)
+            CreateMap<AddCartItemDto, CartItem>();
+
+            //map order
+            CreateMap<Order, OrderDto>().ReverseMap();
+            CreateMap<OrderItem, OrderItemDto>().ReverseMap();
+            CreateMap<Payment, PaymentDto>().ReverseMap();
+            CreateMap<Product, ProductItemDto>().ReverseMap();
         }
     }
 }

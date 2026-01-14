@@ -51,7 +51,7 @@ public class ExceptionMiddleware
 
             default: // Các lỗi khác, ta set status 500
                 context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-                response.Message = "Internal Server Error"; // Giấu lỗi hệ thống
+                response.Message = exception.Message;
                 break;
         }
 

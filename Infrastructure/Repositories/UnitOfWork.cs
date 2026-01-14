@@ -11,6 +11,7 @@ public class UnitOfWork(AppDbContext _context): IUnitOfWork
     private IProductRepository? _productRepository;
     private IInventoryRepository? _inventoryRepository;
     private ICartRepository? _cartRepository;
+    private IOrderRepository? _orderRepository;
 
 //when other function call (uow.ProductRepository) -> check and avoid create multiple instance
     public IProductRepository ProductRepository => _productRepository 
@@ -21,7 +22,8 @@ public class UnitOfWork(AppDbContext _context): IUnitOfWork
     public ICartRepository CartRepository => _cartRepository 
         ??= new CartRepository(_context);
 
-
+    public IOrderRepository OrderRepository => _orderRepository
+        ??= new OrderRepository(_context);
     public async Task<bool> Complete()
     {
         try
