@@ -1,8 +1,8 @@
 using System;
-using Adidas.Domain.Enums;
+using SportZone.Domain.Enums;
 using API.Entities;
 
-namespace Adidas.Application.Interfaces.IRepositories;
+namespace SportZone.Application.Interfaces.IRepositories;
 
 public interface IOrderRepository : IGenericRepository<Order>
 {

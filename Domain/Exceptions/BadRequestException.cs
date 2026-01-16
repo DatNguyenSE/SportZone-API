@@ -1,4 +1,4 @@
-namespace Adidas.Domain.Exceptions;
+namespace SportZone.Domain.Exceptions;
 
 public class BadRequestException : Exception
 {

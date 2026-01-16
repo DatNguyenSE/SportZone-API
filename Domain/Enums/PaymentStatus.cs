@@ -1,4 +1,4 @@
-namespace Adidas.Domain.Enums;
+namespace SportZone.Domain.Enums;
 public enum PaymentStatus
 {
     Pending = 1,

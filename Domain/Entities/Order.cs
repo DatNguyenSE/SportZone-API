@@ -1,4 +1,4 @@
-﻿using Adidas.Domain.Enums;
+﻿using SportZone.Domain.Enums;
 
 namespace API.Entities
 {

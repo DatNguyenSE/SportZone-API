@@ -1,8 +1,8 @@
-using Adidas.Application.Dtos;
-using Adidas.Application.Interfaces.IService;
+using SportZone.Application.Dtos;
+using SportZone.Application.Interfaces.IService;
 using API.Entities;
 
-namespace Adidas.Application.Extensions
+namespace SportZone.Application.Extensions
 {
     public static class AppUserExtensions
 {

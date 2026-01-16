@@ -1,2 +1,2 @@
-namespace Adidas.Domain.Exceptions;
+namespace SportZone.Domain.Exceptions;
 public class NotFoundException(string message) : Exception(message);

@@ -1,10 +1,10 @@
-using Adidas.API.Extensions;
-using Adidas.Application.Interfaces.IService;
-using Adidas.Domain.Enums;
+using SportZone.API.Extensions;
+using SportZone.Application.Interfaces.IService;
+using SportZone.Domain.Enums;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Adidas.API.Controllers
+namespace SportZone.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -14,8 +14,8 @@ namespace Adidas.API.Controllers
         public async Task<IActionResult> CreateOrder(PaymentMethod paymentMethod)
         {
             var userId = User.GetUserId();
-            var orderId = await orderService.CreateOrderByCartItemsAsync(userId, paymentMethod);
-            return CreatedAtAction(nameof(GetOrderWithDetails), new { orderId = orderId }, orderId);
+            var order = await orderService.CreateOrderByCartItemsAsync(userId, paymentMethod);
+            return CreatedAtAction(nameof(GetOrderWithDetails), new { orderId = order.Id }, order);
         }
 
         [HttpGet("user-orders")]

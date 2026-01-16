@@ -1,7 +1,7 @@
 using System;
-using Adidas.Application.Dtos;
+using SportZone.Application.Dtos;
 
-namespace Adidas.Application.Interfaces.IService;
+namespace SportZone.Application.Interfaces.IService;
 
 public interface ICartService
 {

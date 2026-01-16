@@ -1,8 +1,8 @@
 using System;
-using Adidas.Application.Dtos;
+using SportZone.Application.Dtos;
 using API.Entities;
 
-namespace Adidas.Application.Interfaces.IService;
+namespace SportZone.Application.Interfaces.IService;
 
 public interface IInventoryService
 {

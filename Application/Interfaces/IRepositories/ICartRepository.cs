@@ -1,7 +1,7 @@
 using System;
 using API.Entities;
 
-namespace Adidas.Application.Interfaces.IRepositories;
+namespace SportZone.Application.Interfaces.IRepositories;
 
 public interface ICartRepository : IGenericRepository<Cart>
 {

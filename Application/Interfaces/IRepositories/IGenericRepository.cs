@@ -1,7 +1,7 @@
 
 using System.Linq.Expressions;
 
-namespace Adidas.Application.Interfaces
+namespace SportZone.Application.Interfaces
 {
     public interface IGenericRepository<T> where T : class
     {

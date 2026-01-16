@@ -1,6 +1,6 @@
-using Adidas.Application.Dtos;
-using Adidas.Application.Interfaces;
-using Adidas.Application.Interfaces.IService;
+using SportZone.Application.Dtos;
+using SportZone.Application.Interfaces;
+using SportZone.Application.Interfaces.IService;
 using Microsoft.AspNetCore.Mvc;
 namespace API.Controllers
 {

@@ -1,4 +1,4 @@
-namespace Adidas.Application.Dtos;
+namespace SportZone.Application.Dtos;
 
 public class PaymentDto
 {

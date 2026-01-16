@@ -1,7 +1,7 @@
 using System.Net;
 using System.Text.Json;
-using Adidas.Domain.Exceptions;
-namespace Adidas.API.Middlewares;
+using SportZone.Domain.Exceptions;
+namespace SportZone.API.Middlewares;
 
 public class ExceptionMiddleware
 {

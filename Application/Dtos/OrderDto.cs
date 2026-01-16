@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace Adidas.Application.Dtos;
+namespace SportZone.Application.Dtos;
 
 public class OrderDto
 {

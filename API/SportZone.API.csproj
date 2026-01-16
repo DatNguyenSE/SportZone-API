@@ -23,8 +23,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Infrastructure\Adidas.Infrastructure.csproj" />
-    <ProjectReference Include="..\Application\Adidas.Application.csproj" />
+    <ProjectReference Include="..\Infrastructure\SportZone.Infrastructure.csproj" />
+    <ProjectReference Include="..\Application\SportZone.Application.csproj" />
   </ItemGroup>
 
 </Project>

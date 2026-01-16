@@ -5,19 +5,19 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{996CEBED-A05B-5D42-3FF0-982E087A2599}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adidas.Domain", "Domain\Adidas.Domain.csproj", "{685FA5FD-8A43-46FD-BDBA-F0F297EF8048}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportZone.Domain", "Domain\SportZone.Domain.csproj", "{685FA5FD-8A43-46FD-BDBA-F0F297EF8048}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{A74F262E-BDE7-D5D2-89E9-785413424D0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adidas.Application", "Application\Adidas.Application.csproj", "{2D4ED0D0-6229-4975-BF1A-DF68F6F97DCE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportZone.Application", "Application\SportZone.Application.csproj", "{2D4ED0D0-6229-4975-BF1A-DF68F6F97DCE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{DFEE68D8-A7D0-1A41-506C-9B74AA9A7B7B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adidas.Infrastructure", "Infrastructure\Adidas.Infrastructure.csproj", "{E9ED5A2D-887A-4E41-B6DB-A7BBF77862C8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportZone.Infrastructure", "Infrastructure\SportZone.Infrastructure.csproj", "{E9ED5A2D-887A-4E41-B6DB-A7BBF77862C8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{D82C56D6-B2CD-F611-9E31-04638F7EC30E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adidas.API", "API\Adidas.API.csproj", "{3F62DB2C-3306-433D-BEC1-176F4BEA554C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportZone.API", "API\SportZone.API.csproj", "{3F62DB2C-3306-433D-BEC1-176F4BEA554C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

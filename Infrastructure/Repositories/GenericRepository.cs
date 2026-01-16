@@ -1,11 +1,11 @@
 using System.Linq.Expressions;
-using Adidas.Application.Interfaces;
+using SportZone.Application.Interfaces;
 
 using API.Data;
 
 using Microsoft.EntityFrameworkCore;
 
-namespace Adidas.Infrastructure.Repositories
+namespace SportZone.Infrastructure.Repositories
 
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class

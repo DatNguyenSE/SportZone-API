@@ -1,8 +1,8 @@
-﻿using Adidas.Application.Interfaces;
+﻿using SportZone.Application.Interfaces;
 using API.Data;
 using API.Entities;
 using Microsoft.EntityFrameworkCore;
-namespace Adidas.Infrastructure.Repositories
+namespace SportZone.Infrastructure.Repositories
 {
     public class ProductRepository(AppDbContext context) : GenericRepository<Product>(context), IProductRepository
     {

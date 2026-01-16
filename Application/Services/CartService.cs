@@ -1,12 +1,12 @@
 using System;
-using Adidas.Application.Dtos;
-using Adidas.Application.Interfaces;
-using Adidas.Application.Interfaces.IService;
-using Adidas.Domain.Exceptions;
+using SportZone.Application.Dtos;
+using SportZone.Application.Interfaces;
+using SportZone.Application.Interfaces.IService;
+using SportZone.Domain.Exceptions;
 using API.Entities;
 using AutoMapper;
 
-namespace Adidas.Application.Services;
+namespace SportZone.Application.Services;
 
 public class CartService(IUnitOfWork uow, IMapper mapper) : ICartService
 {

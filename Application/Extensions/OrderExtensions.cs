@@ -1,6 +1,6 @@
 using API.Entities;
 
-namespace Adidas.Application.Extensions;
+namespace SportZone.Application.Extensions;
 public static class OrderExtensions
 {
     

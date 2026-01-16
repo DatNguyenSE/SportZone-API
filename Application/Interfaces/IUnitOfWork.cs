@@ -1,7 +1,7 @@
 using System;
-using Adidas.Application.Interfaces.IRepositories;
+using SportZone.Application.Interfaces.IRepositories;
 
-namespace Adidas.Application.Interfaces;
+namespace SportZone.Application.Interfaces;
 
 public interface IUnitOfWork
 {

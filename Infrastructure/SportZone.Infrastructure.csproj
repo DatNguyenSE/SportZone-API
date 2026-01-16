@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\Application\Adidas.Application.csproj" />
-    <ProjectReference Include="..\Domain\Adidas.Domain.csproj" />
+    <ProjectReference Include="..\Application\SportZone.Application.csproj" />
+    <ProjectReference Include="..\Domain\SportZone.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>

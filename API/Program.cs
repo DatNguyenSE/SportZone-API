@@ -1,8 +1,8 @@
 using System.Text;
-using Adidas.Application.Interfaces;
-using Adidas.Application.Interfaces.IService;
-using Adidas.Infrastructure.Repositories;
-using Adidas.Infrastructure.Service;
+using SportZone.Application.Interfaces;
+using SportZone.Application.Interfaces.IService;
+using SportZone.Infrastructure.Repositories;
+using SportZone.Infrastructure.Service;
 using API.Data;
 using API.Entities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -11,10 +11,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using AutoMapper;
-using Adidas.Application.Services;
-using Adidas.Application.Mappings;
-using Adidas.Infrastructure.Data;
-using Adidas.API.Middlewares;
+using SportZone.Application.Services;
+using SportZone.Application.Mappings;
+using SportZone.Infrastructure.Data;
+using SportZone.API.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,7 +28,7 @@ builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(option =>
 {
-    option.SwaggerDoc("v1", new OpenApiInfo { Title = "Adidas API", Version = "v1" });
+    option.SwaggerDoc("v1", new OpenApiInfo { Title = "SportZone API", Version = "v1" });
 
     // Cấu hình để Swagger hiển thị nút "Authorize" (ổ khóa)
     option.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme

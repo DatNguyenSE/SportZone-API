@@ -1,10 +1,10 @@
 
-using Adidas.Application.Interfaces.IRepositories;
+using SportZone.Application.Interfaces.IRepositories;
 using API.Data;
 using API.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Adidas.Infrastructure.Repositories;
+namespace SportZone.Infrastructure.Repositories;
 
 public class CartRepository(AppDbContext _context) : GenericRepository<Cart>(_context), ICartRepository
 {

@@ -1,11 +1,11 @@
-using Adidas.Application.Dtos;
-using Adidas.Application.Interfaces.IService;
-using Adidas.Application.Extensions;
+using SportZone.Application.Dtos;
+using SportZone.Application.Interfaces.IService;
+using SportZone.Application.Extensions;
 using API.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Adidas.API.Controllers
+namespace SportZone.API.Controllers
 {
     [Route("api/account")]
     [ApiController]

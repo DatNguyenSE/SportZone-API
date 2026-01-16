@@ -1,8 +1,8 @@
 using AutoMapper;
-using Adidas.Application.Dtos;
+using SportZone.Application.Dtos;
 using API.Entities;
 
-namespace Adidas.Application.Mappings
+namespace SportZone.Application.Mappings
 {
 
     public class MappingProfile : Profile

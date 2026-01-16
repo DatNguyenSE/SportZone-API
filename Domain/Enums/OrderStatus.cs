@@ -1,4 +1,4 @@
-namespace Adidas.Domain.Enums;
+namespace SportZone.Domain.Enums;
 public enum OrderStatus
 {
     Pending = 1,    // Đang chờ xử lý

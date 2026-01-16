@@ -1,6 +1,6 @@
 using API.Entities;
 
-namespace Adidas.Application.Interfaces
+namespace SportZone.Application.Interfaces
 {
 
     public interface IProductRepository : IGenericRepository<Product>

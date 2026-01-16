@@ -3,13 +3,13 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
-using Adidas.Application.Interfaces.IService;
+using SportZone.Application.Interfaces.IService;
 using API.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
-namespace Adidas.Infrastructure.Service;
+namespace SportZone.Infrastructure.Service;
 
 public class TokenService(IConfiguration config, UserManager<AppUser> userManager) : ITokenService
 {

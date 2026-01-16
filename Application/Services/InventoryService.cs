@@ -1,12 +1,12 @@
 using System;
-using Adidas.Application.Dtos;
-using Adidas.Application.Interfaces;
-using Adidas.Application.Interfaces.IRepositories;
-using Adidas.Application.Interfaces.IService;
-using Adidas.Domain.Exceptions;
+using SportZone.Application.Dtos;
+using SportZone.Application.Interfaces;
+using SportZone.Application.Interfaces.IRepositories;
+using SportZone.Application.Interfaces.IService;
+using SportZone.Domain.Exceptions;
 using AutoMapper;
 
-namespace Adidas.Application.Services;
+namespace SportZone.Application.Services;
 
 public class InventoryService(IUnitOfWork uow, IMapper mapper) : IInventoryService
 {

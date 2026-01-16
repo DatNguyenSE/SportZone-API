@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Adidas.Application.Dtos
+namespace SportZone.Application.Dtos
 {
     public class RegisterDto
     {

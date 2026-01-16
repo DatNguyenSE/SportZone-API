@@ -1,6 +1,6 @@
 using System.Security.Claims;
 
-namespace Adidas.API.Extensions; 
+namespace SportZone.API.Extensions; 
 public static class ClaimsPrincipalExtensions
 {
     public static string GetUserId(this ClaimsPrincipal user)

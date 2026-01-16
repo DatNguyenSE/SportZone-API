@@ -1,11 +1,11 @@
 using System;
-using Adidas.Application.Interfaces.IRepositories;
-using Adidas.Domain.Enums;
+using SportZone.Application.Interfaces.IRepositories;
+using SportZone.Domain.Enums;
 using API.Data;
 using API.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Adidas.Infrastructure.Repositories;
+namespace SportZone.Infrastructure.Repositories;
 
 public class OrderRepository(AppDbContext _context) : GenericRepository<Order>(_context), IOrderRepository
 {

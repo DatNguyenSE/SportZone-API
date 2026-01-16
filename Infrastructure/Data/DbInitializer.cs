@@ -2,7 +2,7 @@ using API.Data;
 using API.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Adidas.Infrastructure.Data
+namespace SportZone.Infrastructure.Data
 {
     public class DbInitializer
     {
